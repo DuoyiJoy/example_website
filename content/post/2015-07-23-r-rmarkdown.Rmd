@@ -1,7 +1,7 @@
 ---
 title: "The influencethe of age and gender on the covid-19's cases "
 author: "Duoyi Zhang"
-date:  2020-09-24T21:49:57-07:00
+date:  2020-09-22T21:49:57-07:00
 categories: ["R"]
 tags: ["R Markdown", "plot", "regression"]
 ---

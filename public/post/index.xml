@@ -6,35 +6,35 @@
     <description>Recent content in Posts on Duoyi&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2020 21:13:14 -0500</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Sep 2020 21:49:57 -0700</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello R Markdown</title>
-      <link>/2020/09/25/hello-r-markdown/</link>
-      <pubDate>Fri, 25 Sep 2020 21:13:14 -0500</pubDate>
+      <title>The influencethe of age and gender on the covid-19&#39;s cases </title>
+      <link>/2020/09/22/the-influencethe-of-age-and-gender-on-the-covid-19s-cases/</link>
+      <pubDate>Tue, 22 Sep 2020 21:49:57 -0700</pubDate>
       
-      <guid>/2020/09/25/hello-r-markdown/</guid>
-      <description>#Part I.Abstraction
-#Part II.Introduction
-#Part III.Including Plots</description>
+      <guid>/2020/09/22/the-influencethe-of-age-and-gender-on-the-covid-19s-cases/</guid>
+      <description>Abstract: I plot the variables:gender and age groups independently first.Then I try to relate them with the outcome ,and visulizie the relationship between them respectively.Despite the missing data and limitation of resources, I draw a conclusion that there exist a solid connection between age and the recovery rate.But there seem to be no difference beween the gender in front of the covid-19.
+ Motivation: Covid-19 has made the world totally different,it destroys many people’s life,make a lot of people unemployed ，many companies to shut down, even deprive of many people’s life.</description>
     </item>
     
     <item>
-      <title>A Plain Markdown Post</title>
-      <link>/2016/12/30/a-plain-markdown-post/</link>
+      <title>Some other knowledge you need to know about the reference</title>
+      <link>/2016/12/30/some-other-knowledge-you-need-to-know-about-the-reference/</link>
       <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
       
-      <guid>/2016/12/30/a-plain-markdown-post/</guid>
-      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
+      <guid>/2016/12/30/some-other-knowledge-you-need-to-know-about-the-reference/</guid>
+      <description>#What is City of Toronto Open Data?
+The City of Toronto’s Open Data Portal is an open source delivery tool to bring people and data together. Whether you’re an app developer, an engaged citizen, or a student trying to learn more about how the city works, the Open Data Portal contains a wealth of datasets for you to explore. We update regularly with new datasets, and welcome your requests.
+#About COVID-19 Cases in Toronto</description>
     </item>
     
     <item>
-      <title>Lorem Ipsum</title>
-      <link>/2015/01/01/lorem-ipsum/</link>
+      <title>To be continued</title>
+      <link>/2015/01/01/to-be-continued/</link>
       <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
       
-      <guid>/2015/01/01/lorem-ipsum/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+      <guid>/2015/01/01/to-be-continued/</guid>
+      <description>To be continued</description>
     </item>
     
   </channel>
