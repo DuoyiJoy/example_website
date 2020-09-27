@@ -1,8 +1,7 @@
 ---
 title: "The influencethe of age and gender on the covid-19's cases "
 author: "Duoyi Zhang"
-date: 2015-07-23T21:49:57-07:00
-abstract: "I plot the variables:gender and age groups independently first.Then I try to relate them with the outcome ,and visulizie the relationship between them respectively.Despite the missing data and limitation of resources, I draw a conclusion that there exist a solid connection between age and the recovery rate.But there seem to be no difference beween the gender in front of the covid-19."
+date:  2020-09-24T21:49:57-07:00
 categories: ["R"]
 tags: ["R Markdown", "plot", "regression"]
 ---
