@@ -1,22 +1,174 @@
 ---
-title: "Hello R Markdown"
+title: "The influencethe of age and gender on the covid-19's infection and recovery "
 author: "Duoyi Zhang"
-date: 2020-09-25T21:13:14-05:00
-bibliography:"references.bib"
-categories: ["R"]
-tags: ["R Markdown", "plot", "regression"]
+date: "September 26, 2020"
+abstract: "I plot the variables:gender and age groups independently first.Then I try to relate them with the outcome ,and visulizie the relationship between them respectively.Despite the missing data and limitation of resources, I draw a conclusion that there exist a solid connection between age and the recovery rate.But there seem to be no difference beween the gender in front of the covid-19."
 
+output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
+```{r setup, include=FALSE,echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#install.packages("tidyverse")
+library(tidyverse)
+library(visdat)
+library(skimr)
+library(opendatatoronto)
+library(dplyr)
+
 ```
-# Part I.Abstraction
-@tidyverse.
-
-# Part II.Introduction
 
 
-# Part III.Including Plots
+# Motivation:
 
-#Reference
+Covid-19 has made the world  totally different,it destroys many people's life,make a lot of people unemployed ，many companies to shut down, even deprive of many people's life.As a student who majors in Statistics in University of Toronto.I always hope I can make some contribution to the fight with covid-19.So I chose the topic "the relationship between gender, age , and the recovery rate of Covid-19" to discuss.
+
+
+
+```{r download, warning=FALSE, message=FALSE,echo=FALSE}
+#install.packages("opendatatoronto")
+#install.packages("devtools")
+devtools::install_github("sharlagelfand/opendatatoronto")
+```
+
+```{r warning=FALSE, message=FALSE,echo=FALSE,include=FALSE}
+
+
+# get package
+package <- show_package("64b54586-6180-4485-83eb-81e8fae3b8fe")
+package
+
+# get all resources for this package
+resources <- list_package_resources("64b54586-6180-4485-83eb-81e8fae3b8fe")
+
+# identify datastore resources; by default, Toronto Open Data sets datastore resource format to CSV for non-geospatial and GeoJSON for geospatial resources
+datastore_resources <- filter(resources, tolower(format) %in% c('csv', 'geojson'))
+
+# load the first datastore resource as a sample
+mydata1 <- filter(datastore_resources, row_number()==1) %>% get_resource()
+mydata1
+str(mydata1)
+```
+
+# Data
+
+
+```{r,echo=FALSE,include=FALSE}
+#install.packages("visdat")
+visdat::vis_dat(mydata1)
+
+skimr::skim(mydata1)
+mydata1 <- 
+  mydata1 %>% 
+  select(`Client Gender`, `Outcome`,`Age Group`)
+
+```
+
+#Interpretation for these data
+The variables we focus on are `Client Gender`, `Outcome` and `Age Group`.
+By the visdat,we can see there's no missing data.]
+We choose these variables since we want to study the relationship between the gender ,age and the outcome.
+We want to find whether client gender and age can affect the recovery rate.Is it true that the young has lower rate of infection and higher rate of recovery than the elder?
+We will discuss these problem by investigate the data from opendatatoronto dataset,and all the data about COVID-19 cases in Toronto  is released by Toronto Public Health and last refreshed on Sept 23.
+
+
+```{r,echo=FALSE}
+head(mydata1)
+```
+
+# Data visulizations
+
+**Analysis and visulization for the "Client Gender"**:
+```{r,echo=FALSE}
+table(mydata1$`Client Gender`)
+```
+
+```{r,echo=FALSE}
+mydata1 %>% 
+  ggplot(aes(x = `Client Gender`)) +
+  geom_bar()
+```
+
+We can see clearly by the table and gg plot that, there are 9427 females and 8141 males  who is infected with covid-19 despite the unknown data.
+As seen in the report"2016 Census: Age and Sex; Type of Dwelling" which is released by Statistics Canada, "In 2016, the ratio of males to females, was
+92.6 males for every 100 females. "
+If we assume there's no big difference about the gender ratio in these 4 years,we can conclude that the infection rate of female and male is 1.07:1.
+The infection rate of female is slightly higher than male.
+
+
+**Analysis and visulization for the "Age Group"**:
+
+```{r,echo=FALSE}
+table(mydata1$`Age Group`)
+```
+
+```{r,echo=FALSE}
+mydata1 %>% 
+  ggplot(aes(x = `Age Group`)) +
+  geom_bar()
+
+```
+
+Since we cannot access the precise number for different groups,we cannot draw a solid conclusion here to analyze the infection rate of different ages.
+
+
+
+**Visulaize the relationship between age and the outcome**
+```{r,echo=FALSE}
+#install.packages(ggplot2)
+ggplot(data= mydata1,mapping=aes(x=`Age Group`,fill=Outcome))+geom_bar(position="fill")+ggtitle("the relationship between age and the outcome")
+```
+
+**Discussion**:
+
+As the author of the dataset described,the interpretation of outcome is as follows:
+"Fatal: Cases with a fatal outcome reported.
+Resolved: Cases not reported as deceased, and who are either:
+Reported as 'recovered' OR
+Where the report date is more than 14 days from symptom onset AND the case is not currently hospitalized.
+This number is underreported due to a lag in data entry.
+Active: All other cases"
+
+As seen on the plot,we can see  an obvious difference between different age groups.There's a decline on the ration of resolved cases after people reach 60.And for people who is under 60, the death rate is so small that is negligible.But there's a huge rise of the fatal cases as people reach 60.We can see that,**the older of people, the higher posibilty  of their illness cannot be recovered**.
+
+
+```{r,echo=FALSE}
+ggplot(data= mydata1,mapping=aes(x=`Client Gender`,fill=`Outcome`))+geom_bar(position="fill")+ggtitle("the relationship between gender and the outcome")
+```
+
+
+**Discussion**
+
+In this graph, we can see despite the the data we cannot track,the resoloved ratio and fatal ratio in female and male is almost the same.We can conclude that in face of covid-19, women and men have the same ability to recover.There's no difference between the gender.
+
+# Conclusion of my analysis
+From our analysis, we can conclude that people who are in different ages have the different ability to recover,but as for the gender, there is no difference ,men and women almost have the possibilty to be infected and be cured.The whole human race is a community.To fight with the scaring desease, we have to collabrate with each other.
+
+
+
+## Weaknesses and next steps
+Despite the weakness of the dataset(some data cannot be tracked and recorded which will make our analysis less reliable ),there are some weaknesses in our analysis.
+
+Due to the limitation of time and resources, we cannot access the accurate data of the population in Toronto, we can only use the 2016 cencus report to have a rough estimate. The conclusion we made here are all on the assumption that there's no big change in population distribution in Toronto.
+
+In the future ,if I can have the accurate data ,I hope I can investigate more about the relationship between `Client Gender`, `Outcome` and `Age Group`. I hope the covid-19 analysis on the gender ,age can help the public have a deeper understanding about the desease, and help the government to implement more appropriate policies to fight it.
+
+There are still interesting variables such as "Source of Infection","Neighbourhood Name' that I do not discuss in this analysis.I hope in the future ,I can deal with them ,and make a far more comprehensive and valuable report.
+
+
+
+
+
+
+# References
+
+- Sharla Gelfand (2020). opendatatoronto: Access the City of Toronto Open Data Portal.
+  https://sharlagelfand.github.io/opendatatoronto/, https://github.com/sharlagelfand/opendata
+-  Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to Make Developing R Packages Easier. https://devtools.r-lib.org/,https://github.com/r-lib/devtools.
+- R Core Team (2020). R: A language and environment for statistical computing. R, Foundation for Statistical Computing, Vienna, Austria. URL, https://www.R-project.org/.
+- JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone (2020). rmarkdown: Dynamic Documents for R. R package version 2.3. URL https://rmarkdown.rstudio.com.
+-T2016 Census: Age and Sex; Type of Dwelling, Statistics Canada (2017) URL,https://www.toronto.ca/wp-content/uploads/2017/10/96d7-2016-Census-Backgrounder-Age-Sex-Dwelling-Type.pdf
+
+
+
+
