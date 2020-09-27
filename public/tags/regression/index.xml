@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>regression on Duoyi&#39;s website</title>
+    <link>/tags/regression/</link>
+    <description>Recent content in regression on Duoyi&#39;s website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Sep 2020 21:13:14 -0500</lastBuildDate><atom:link href="/tags/regression/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/2020/09/25/hello-r-markdown/</link>
+      <pubDate>Fri, 25 Sep 2020 21:13:14 -0500</pubDate>
+      
+      <guid>/2020/09/25/hello-r-markdown/</guid>
+      <description>#Part I.Abstraction
+#Part II.Introduction
+#Part III.Including Plots</description>
+    </item>
+    
+  </channel>
+</rss>
