@@ -1,5 +1,5 @@
 ---
-title: "The influencethe of age and gender on the covid-19's cases "
+title: "The influence of age and gender on the covid-19 cases in Toronto"
 author: "Duoyi Zhang"
 date:  2020-09-22T21:49:57-07:00
 categories: ["R"]
@@ -15,12 +15,26 @@ library(opendatatoronto)
 library(dplyr)
 ```
 
-# Abstract: 
-I plot the variables:gender and age groups independently first.Then I try to relate them with the outcome ,and visulizie the relationship between them respectively.Despite the missing data and limitation of resources, I draw a conclusion that there exist a solid connection between age and the recovery rate.But there seem to be no difference beween the gender in front of the covid-19.
+author:Duoyi Zhang
+date:2020-09-22
 
-# Motivation:
+# Abstract: 
+This article is about digging the relationship between gender,age and covid-19 infection rate and recovery rate in Toronto. Despite the missing data and limitation of resources,the passage draws a conclusion that there exist a solid connection between age and the recovery rate.But there seem to be no difference beween the male and female in front of the covid-19.It can help people have a better understanding about the disease.
+
+# Introduction:
+
+**Motivation**
 
 Covid-19 has made the world  totally different,it destroys many people's life,make a lot of people unemployed ，many companies to shut down, even deprive of many people's life.As a student who majors in Statistics in University of Toronto.I always hope I can make some contribution to the fight with covid-19.So I chose the topic :the relationship between gender, age , and the recovery rate of Covid-19 to discuss.
+
+**What we found from analyzing the data**
+
+We can conclude that the infection rate of female and male is 1.07:1,and we can also conclude there's an  obvious difference between different age groups for the recovery rate.
+
+**Weakness of the analysis**
+
+Due to the limitation of time and resources, we cannot access the accurate data of the population in Toronto,which make our analysis not that solid.What's more,due to my unfamiliarity with R,my statistical method might not be so accurate and appropriate.
+
 
 ```{r download, warning=FALSE, message=FALSE,echo=FALSE}
 #install.packages("opendatatoronto")
@@ -38,20 +52,21 @@ package
 # get all resources for this package
 resources <- list_package_resources("64b54586-6180-4485-83eb-81e8fae3b8fe")
 
-# identify datastore resources; by default, Toronto Open Data sets datastore resource format to CSV for non-geospatial and GeoJSON for geospatial resources
-datastore_resources <- filter(resources, tolower(format) %in% c('csv', 'geojson'))
+datastore_resources <- filter(resources, tolower(format) %in% 
+                                c('csv', 'geojson'))
 
 # load the first datastore resource as a sample
 mydata1 <- filter(datastore_resources, row_number()==1) %>% get_resource()
 mydata1
 str(mydata1)
+
 ```
 
 
 # Data
 
 
-```{r,echo=FALSE,include=FALSE}
+```{r,echo=FALSE}
 #install.packages("visdat")
 visdat::vis_dat(mydata1)
 
@@ -59,14 +74,18 @@ skimr::skim(mydata1)
 mydata1 <- 
   mydata1 %>% 
   select(`Client Gender`, `Outcome`,`Age Group`)
-
 ```
 
 #Interpretation for these data
-The variables we focus on are `Client Gender`, `Outcome` and `Age Group`.
-By the visdat,we can see there's no missing data.]
+
+The variables we focus on are 'Client Gender', 'Outcome; and 'Age Group'.
+
+By the visdat,we can see there's no missing data.
+
 We choose these variables since we want to study the relationship between the gender ,age and the outcome.
+
 We want to find whether client gender and age can affect the recovery rate.Is it true that the young has lower rate of infection and higher rate of recovery than the elder?
+
 We will discuss these problem by investigate the data from opendatatoronto dataset,and all the data about COVID-19 cases in Toronto  is released by Toronto Public Health and last refreshed on Sept 23.
 
 ```{r,echo=FALSE}
@@ -90,7 +109,7 @@ We can see clearly by the table and gg plot that, there are 9427 females and 814
 As seen in the report"2016 Census: Age and Sex; Type of Dwelling" which is released by Statistics Canada, "In 2016, the ratio of males to females, was
 92.6 males for every 100 females. "
 If we assume there's no big difference about the gender ratio in these 4 years,we can conclude that the infection rate of female and male is 1.07:1.
-The infection rate of female is slightly higher than male.
+The infection rate of female and male is too slight to be noticed.
 
 
 **Analysis and visulization for the "Age Group"**:
@@ -112,7 +131,9 @@ Since we cannot access the precise number for different groups,we cannot draw a 
 **Visulaize the relationship between age and the outcome**
 ```{r,echo=FALSE}
 #install.packages(ggplot2)
-ggplot(data= mydata1,mapping=aes(x=`Age Group`,fill=Outcome))+geom_bar(position="fill")+ggtitle("the relationship between age and the outcome")
+ggplot(data= mydata1,mapping=aes(x=`Age Group`,fill=Outcome))+
+  geom_bar(position="fill")+
+  ggtitle("the relationship between age and the outcome")
 ```
 
 **Discussion**:
@@ -125,11 +146,13 @@ Where the report date is more than 14 days from symptom onset AND the case is no
 This number is underreported due to a lag in data entry.
 Active: All other cases"
 
-As seen on the plot,we can see  an obvious difference between different age groups.There's a decline on the ration of resolved cases after people reach 60.And for people who is under 60, the death rate is so small that is negligible.But there's a huge rise of the fatal cases as people reach 60.We can see that,**the older of people, the higher posibilty  of their illness cannot be recovered**.
+As seen on the plot,we can see an  obvious difference between different age groups.There's a decline on the ration of resolved cases after people reach 60.And for people who is under 60, the death rate is so small that is negligible.But there's a huge rise of the fatal cases as people reach 60.We can see that,**the older of people, the higher posibilty  of their illness cannot be recovered**.
 
 
 ```{r,echo=FALSE}
-ggplot(data= mydata1,mapping=aes(x=`Client Gender`,fill=`Outcome`))+geom_bar(position="fill")+ggtitle("the relationship between gender and the outcome")
+ggplot(data= mydata1,mapping=aes(x=`Client Gender`,fill=`Outcome`))+
+  geom_bar(position="fill")+
+  ggtitle("the relationship between gender and the outcome")
 ```
 
 **Discussion**
@@ -137,14 +160,18 @@ ggplot(data= mydata1,mapping=aes(x=`Client Gender`,fill=`Outcome`))+geom_bar(pos
 In this graph, we can see despite the the data we cannot track,the resoloved ratio and fatal ratio in female and male is almost the same.We can conclude that in face of covid-19, women and men have the same ability to recover.There's no difference between the gender.
 
 # Conclusion of my analysis
-From our analysis, we can conclude that people who are in different ages have the different ability to recover,but as for the gender, there is no difference ,men and women almost have the possibilty to be infected and be cured.The whole human race is a community.To fight with the scaring desease, we have to collabrate with each other.
+From our analysis,** we can conclude that people who are in different ages have the different ability to recover,but as for the gender, there is no difference ,men and women almost have the possibilty to be infected and be cured**.The whole human race is a community.To fight with the scaring desease, we have to collabrate with each other.
 
 
 
 ## Weaknesses and next steps
-Despite the weakness of the dataset(some data cannot be tracked and recorded which will make our analysis less reliable ),there are some weaknesses in our analysis.
+The weakness of the dataset is obvious,some data is hard to be tracked and recorded ,thus making our analysis less reliable .And due to the limitation of human resources, the dataset cannot be  updated daily,but on a weekly basis.So there will be some delay in our analysis.
 
-Due to the limitation of time and resources, we cannot access the accurate data of the population in Toronto, we can only use the 2016 cencus report to have a rough estimate. The conclusion we made here are all on the assumption that there's no big change in population distribution in Toronto.
+Despite the weakness of the dataset,there are still some weaknesses due to  myself.
+
+Due to the limitation of time and resources, we cannot access the accurate data of the population in Toronto, we can only use the 2016 cencus report to have a rough estimate. The conclusions we made here are all on the assumption that there's no big change in population distribution in Toronto.
+
+What's more,due to my unfamiliarity with R,my statistical method might not be so accurate and appropriate.
 
 In the future ,if I can have the accurate data ,I hope I can investigate more about the relationship between `Client Gender`, `Outcome` and `Age Group`. I hope the covid-19 analysis on the gender ,age can help the public have a deeper understanding about the desease, and help the government to implement more appropriate policies to fight it.
 
@@ -163,7 +190,13 @@ There are still interesting variables such as "Source of Infection","Neighbourho
 - R Core Team (2020). R: A language and environment for statistical computing. R, Foundation for Statistical Computing, Vienna, Austria. URL, https://www.R-project.org/.
 - JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone (2020). rmarkdown: Dynamic Documents for R. R package version 2.3. URL https://rmarkdown.rstudio.com.
 -T2016 Census: Age and Sex; Type of Dwelling, Statistics Canada (2017) URL,https://www.toronto.ca/wp-content/uploads/2017/10/96d7-2016-Census-Backgrounder-Age-Sex-Dwelling-Type.pdf
+-Toronto Public Health,COVID-19 Cases in Toronto(2020).
+https://open.toronto.ca/dataset/covid-19-cases-in-toronto/
 
+# Some other notice
+
+Code supporting this analysis is available at: https://github.com/DuoyiJoy/example_website
+Data supporting this analysis is available at:https://open.toronto.ca/dataset/covid-19-cases-in-toronto/
 
 
 

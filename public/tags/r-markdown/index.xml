@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Sep 2020 21:49:57 -0700</lastBuildDate><atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The influencethe of age and gender on the covid-19&#39;s cases </title>
-      <link>/2020/09/22/the-influencethe-of-age-and-gender-on-the-covid-19s-cases/</link>
+      <title>The influence of age and gender on the covid-19 cases in Toronto</title>
+      <link>/2020/09/22/the-influence-of-age-and-gender-on-the-covid-19-cases-in-toronto/</link>
       <pubDate>Tue, 22 Sep 2020 21:49:57 -0700</pubDate>
       
-      <guid>/2020/09/22/the-influencethe-of-age-and-gender-on-the-covid-19s-cases/</guid>
-      <description>Abstract: I plot the variables:gender and age groups independently first.Then I try to relate them with the outcome ,and visulizie the relationship between them respectively.Despite the missing data and limitation of resources, I draw a conclusion that there exist a solid connection between age and the recovery rate.But there seem to be no difference beween the gender in front of the covid-19.
- Motivation: Covid-19 has made the world totally different,it destroys many people’s life,make a lot of people unemployed ，many companies to shut down, even deprive of many people’s life.</description>
+      <guid>/2020/09/22/the-influence-of-age-and-gender-on-the-covid-19-cases-in-toronto/</guid>
+      <description>author:Duoyi Zhang date:2020-09-22
+Abstract: This article is about digging the relationship between gender,age and covid-19 infection rate and recovery rate in Toronto. Despite the missing data and limitation of resources,the passage draws a conclusion that there exist a solid connection between age and the recovery rate.But there seem to be no difference beween the male and female in front of the covid-19.It can help people have a better understanding about the disease.</description>
     </item>
     
   </channel>
