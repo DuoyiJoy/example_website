@@ -64,7 +64,7 @@ str(mydata1)
 ```
 
 
-# Data
+# Data：
 
 This data set contains demographic, geographic, and severity information for all confirmed and probable cases reported to and managed by Toronto Public Health since the first case was reported in January 2020. This includes cases that are sporadic (occurring in the community) and outbreak-associated. The data are extracted from the provincial communicable disease reporting system (iPHIS) and Toronto's custom COVID-19 case management system (CORES) and combined for reporting. 
 
@@ -141,7 +141,7 @@ ggplot(data= mydata1,mapping=aes(x=`Age Group`,fill=Outcome))+
   ggtitle("the relationship between age and the outcome")
 ```
 
-**Discussion**:
+**Discussion：**
 
 As the author of the dataset described,the interpretation of outcome is as follows:
 "Fatal: Cases with a fatal outcome reported.
@@ -160,12 +160,12 @@ ggplot(data= mydata1,mapping=aes(x=`Client Gender`,fill=`Outcome`))+
   ggtitle("the relationship between gender and the outcome")
 ```
 
-**Discussion**
+**Discussion：**
 
 In this graph, we can see despite the the data we cannot track,the resoloved ratio and fatal ratio in female and male is almost the same.We can conclude that in face of covid-19, women and men have the same ability to recover.There's no difference between the gender.
 
 # Conclusion of my analysis
-From our analysis,** we can conclude that people who are in different ages have the different ability to recover,but as for the gender, there is no difference ,men and women almost have the possibilty to be infected and be cured**.The whole human race is a community.To fight with the scaring desease, we have to collabrate with each other.
+From our analysis,**we can conclude that people who are in different ages have the different ability to recover,but as for the gender, there is no difference ,men and women almost have the possibilty to be infected and be cured**.The whole human race is a community.To fight with the scaring desease, we have to collabrate with each other.
 
 
 

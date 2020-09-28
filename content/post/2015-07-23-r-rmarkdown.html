@@ -24,7 +24,7 @@ tags: ["R Markdown", "plot", "regression"]
 <p>Due to the limitation of time and resources, we cannot access the accurate data of the population in Toronto,which make our analysis not that solid.What’s more,due to my unfamiliarity with R,my statistical method might not be so accurate and appropriate.</p>
 </div>
 <div id="data" class="section level1">
-<h1>Data</h1>
+<h1>Data：</h1>
 <p>This data set contains demographic, geographic, and severity information for all confirmed and probable cases reported to and managed by Toronto Public Health since the first case was reported in January 2020. This includes cases that are sporadic (occurring in the community) and outbreak-associated. The data are extracted from the provincial communicable disease reporting system (iPHIS) and Toronto’s custom COVID-19 case management system (CORES) and combined for reporting.</p>
 <p>It is refreshed weekly,and the data is last updated on Sept 23.</p>
 <p><img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-3-1.png" width="672" />
@@ -56,7 +56,7 @@ The infection rate of female and male is too slight to be noticed.</p>
 Since we cannot access the precise number for different groups,we cannot draw a solid conclusion here to analyze the infection rate of different ages.</p>
 <p><strong>Visulaize the relationship between age and the outcome</strong>
 <img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<p><strong>Discussion</strong>:</p>
+<p><strong>Discussion：</strong></p>
 <p>As the author of the dataset described,the interpretation of outcome is as follows:
 “Fatal: Cases with a fatal outcome reported.
 Resolved: Cases not reported as deceased, and who are either:
@@ -66,12 +66,12 @@ This number is underreported due to a lag in data entry.
 Active: All other cases”</p>
 <p>As seen on the plot,we can see an obvious difference between different age groups.There’s a decline on the ration of resolved cases after people reach 60.And for people who is under 60, the death rate is so small that is negligible.But there’s a huge rise of the fatal cases as people reach 60.We can see that,<strong>the older of people, the higher posibilty of their illness cannot be recovered</strong>.</p>
 <p><img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<p><strong>Discussion</strong></p>
+<p><strong>Discussion：</strong></p>
 <p>In this graph, we can see despite the the data we cannot track,the resoloved ratio and fatal ratio in female and male is almost the same.We can conclude that in face of covid-19, women and men have the same ability to recover.There’s no difference between the gender.</p>
 </div>
 <div id="conclusion-of-my-analysis" class="section level1">
 <h1>Conclusion of my analysis</h1>
-<p>From our analysis,** we can conclude that people who are in different ages have the different ability to recover,but as for the gender, there is no difference ,men and women almost have the possibilty to be infected and be cured**.The whole human race is a community.To fight with the scaring desease, we have to collabrate with each other.</p>
+<p>From our analysis,<strong>we can conclude that people who are in different ages have the different ability to recover,but as for the gender, there is no difference ,men and women almost have the possibilty to be infected and be cured</strong>.The whole human race is a community.To fight with the scaring desease, we have to collabrate with each other.</p>
 <div id="weaknesses-and-next-steps" class="section level2">
 <h2>Weaknesses and next steps</h2>
 <p>The weakness of the dataset is obvious,some data is hard to be tracked and recorded ,thus making our analysis less reliable .And due to the limitation of human resources, the dataset cannot be updated daily,but on a weekly basis.So there will be some delay in our analysis.</p>
