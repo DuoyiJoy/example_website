@@ -82,9 +82,9 @@ mydata1 <-
 ```{r,echo=FALSE}
 visdat::vis_dat(mydata1)
 ```
-#Interpretation for these data
+#I nterpretation for these data
 
-The variables we focus on are 'Client Gender', 'Outcome; and 'Age Group'.
+The variables we focus on are 'Client Gender', 'Outcome' and 'Age Group'.
 
 By the visdat,we can see there's no missing data.
 
@@ -111,9 +111,11 @@ mydata1 %>%
 ```
 
 We can see clearly by the table and gg plot that, there are 9427 females and 8141 males  who is infected with covid-19 despite the unknown data.
-As seen in the report"2016 Census: Age and Sex; Type of Dwelling" which is released by Statistics Canada, "In 2016, the ratio of males to females, was
-92.6 males for every 100 females. "
+
+As seen in the report"2016 Census: Age and Sex; Type of Dwelling" which is released by Statistics Canada, "In 2016, the ratio of males to females, was 92.6 males for every 100 females. "
+
 If we assume there's no big difference about the gender ratio in these 4 years,we can conclude that the infection rate of female and male is 1.07:1.
+
 The infection rate of female and male is too slight to be noticed.
 
 
@@ -129,6 +131,7 @@ mydata1 %>%
   geom_bar()
 
 ```
+
 Since we cannot access the precise number for different groups,we cannot draw a solid conclusion here to analyze the infection rate of different ages.
 
 
@@ -145,13 +148,20 @@ ggplot(data= mydata1,mapping=aes(x=`Age Group`,fill=Outcome))+
 
 As the author of the dataset described,the interpretation of outcome is as follows:
 "Fatal: Cases with a fatal outcome reported.
+
 Resolved: Cases not reported as deceased, and who are either:
+
 Reported as 'recovered' OR
+
 Where the report date is more than 14 days from symptom onset AND the case is not currently hospitalized.
+
 This number is underreported due to a lag in data entry.
+
 Active: All other cases"
 
-As seen on the plot,we can see an  obvious difference between different age groups.There's a decline on the ration of resolved cases after people reach 60.And for people who is under 60, the death rate is so small that is negligible.But there's a huge rise of the fatal cases as people reach 60.We can see that,**the older of people, the higher posibilty  of their illness cannot be recovered**.
+As seen on the plot,we can see an  obvious difference between different age groups.There's a decline on the ration of resolved cases after people reach 60.And for people who is under 60, the death rate is so small that is negligible.
+
+But there's a huge rise of the fatal cases as people reach 60.We can see that,**the older of people, the higher posibilty  of their illness cannot be recovered**.
 
 
 ```{r,echo=FALSE}
@@ -165,7 +175,9 @@ ggplot(data= mydata1,mapping=aes(x=`Client Gender`,fill=`Outcome`))+
 In this graph, we can see despite the the data we cannot track,the resoloved ratio and fatal ratio in female and male is almost the same.We can conclude that in face of covid-19, women and men have the same ability to recover.There's no difference between the gender.
 
 # Conclusion of my analysis
-From our analysis,**we can conclude that people who are in different ages have the different ability to recover,but as for the gender, there is no difference ,men and women almost have the possibilty to be infected and be cured**.The whole human race is a community.To fight with the scaring desease, we have to collabrate with each other.
+From our analysis,**we can conclude that people who are in different ages have the different ability to recover,but as for the gender, there is no difference ,men and women almost have the possibilty to be infected and be cured**.
+
+The whole human race is a community.To fight with the scaring desease, we have to collabrate with each other.
 
 
 
