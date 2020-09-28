@@ -66,10 +66,12 @@ str(mydata1)
 
 # Data
 
+This data set contains demographic, geographic, and severity information for all confirmed and probable cases reported to and managed by Toronto Public Health since the first case was reported in January 2020. This includes cases that are sporadic (occurring in the community) and outbreak-associated. The data are extracted from the provincial communicable disease reporting system (iPHIS) and Toronto's custom COVID-19 case management system (CORES) and combined for reporting. 
 
-```{r,echo=FALSE}
+It is refreshed weekly,and the data is last updated on Sept 23.
+
+```{r,echo=FALSE,include=FALSE}
 #install.packages("visdat")
-visdat::vis_dat(mydata1)
 
 skimr::skim(mydata1)
 mydata1 <- 
@@ -77,6 +79,9 @@ mydata1 <-
   select(`Client Gender`, `Outcome`,`Age Group`)
 ```
 
+```{r,echo=FALSE}
+visdat::vis_dat(mydata1)
+```
 #Interpretation for these data
 
 The variables we focus on are 'Client Gender', 'Outcome; and 'Age Group'.
@@ -87,9 +92,8 @@ We choose these variables since we want to study the relationship between the ge
 
 We want to find whether client gender and age can affect the recovery rate.Is it true that the young has lower rate of infection and higher rate of recovery than the elder?
 
-We will discuss these problem by investigate the data from opendatatoronto dataset,and all the data about COVID-19 cases in Toronto  is released by Toronto Public Health and last refreshed on Sept 23.
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,include=FALSE}
 head(mydata1)
 ```
 
@@ -197,6 +201,7 @@ https://open.toronto.ca/dataset/covid-19-cases-in-toronto/
 # Some other notice
 
 Code supporting this analysis is available at: https://github.com/DuoyiJoy/example_website
+
 Data supporting this analysis is available at:https://open.toronto.ca/dataset/covid-19-cases-in-toronto/
 
 

@@ -62,7 +62,7 @@
 
   <article class="article">
     
-    <span class="article-duration">7 min read</span>
+    <span class="article-duration">6 min read</span>
     
 
     <h1 class="article-title">The influence of age and gender on the covid-19 cases in Toronto</h1>
@@ -92,286 +92,14 @@
 </div>
 <div id="data" class="section level1">
 <h1>Data</h1>
-<p><img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-2-1.png" width="672" />
-Table: (#tab:unnamed-chunk-2)Data summary</p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">Name</td>
-<td align="left">mydata1</td>
-</tr>
-<tr class="even">
-<td align="left">Number of rows</td>
-<td align="left">17872</td>
-</tr>
-<tr class="odd">
-<td align="left">Number of columns</td>
-<td align="left">18</td>
-</tr>
-<tr class="even">
-<td align="left">_______________________</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Column type frequency:</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">character</td>
-<td align="left">16</td>
-</tr>
-<tr class="odd">
-<td align="left">numeric</td>
-<td align="left">2</td>
-</tr>
-<tr class="even">
-<td align="left">________________________</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Group variables</td>
-<td align="left">None</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: character</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">skim_variable</th>
-<th align="right">n_missing</th>
-<th align="right">complete_rate</th>
-<th align="right">min</th>
-<th align="right">max</th>
-<th align="right">empty</th>
-<th align="right">n_unique</th>
-<th align="right">whitespace</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Outbreak Associated</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">Age Group</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">14</td>
-<td align="right">0</td>
-<td align="right">10</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Neighbourhood Name</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">35</td>
-<td align="right">0</td>
-<td align="right">141</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">FSA</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">97</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Source of Infection</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">6</td>
-<td align="right">25</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">Classification</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">9</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Episode Date</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">10</td>
-<td align="right">10</td>
-<td align="right">0</td>
-<td align="right">217</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">Reported Date</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">10</td>
-<td align="right">10</td>
-<td align="right">0</td>
-<td align="right">212</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Client Gender</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">11</td>
-<td align="right">0</td>
-<td align="right">5</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">Outcome</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Currently Hospitalized</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">Currently in ICU</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Currently Intubated</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">Ever Hospitalized</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Ever in ICU</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">Ever Intubated</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: numeric</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">skim_variable</th>
-<th align="right">n_missing</th>
-<th align="right">complete_rate</th>
-<th align="right">mean</th>
-<th align="right">sd</th>
-<th align="right">p0</th>
-<th align="right">p25</th>
-<th align="right">p50</th>
-<th align="right">p75</th>
-<th align="right">p100</th>
-<th align="left">hist</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">_id</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">152582.50</td>
-<td align="right">5159.35</td>
-<td align="right">143647</td>
-<td align="right">148114.75</td>
-<td align="right">152582.5</td>
-<td align="right">157050.25</td>
-<td align="right">161518</td>
-<td align="left">▇▇▇▇▇</td>
-</tr>
-<tr class="even">
-<td align="left">Assigned_ID</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">9026.35</td>
-<td align="right">5248.05</td>
-<td align="right">1</td>
-<td align="right">4482.75</td>
-<td align="right">8984.5</td>
-<td align="right">13529.25</td>
-<td align="right">18202</td>
-<td align="left">▇▇▇▇▇</td>
-</tr>
-</tbody>
-</table>
-<p>#Interpretation for these data</p>
+<p>This data set contains demographic, geographic, and severity information for all confirmed and probable cases reported to and managed by Toronto Public Health since the first case was reported in January 2020. This includes cases that are sporadic (occurring in the community) and outbreak-associated. The data are extracted from the provincial communicable disease reporting system (iPHIS) and Toronto’s custom COVID-19 case management system (CORES) and combined for reporting.</p>
+<p>It is refreshed weekly,and the data is last updated on Sept 23.</p>
+<p><img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+#Interpretation for these data</p>
 <p>The variables we focus on are ‘Client Gender’, ‘Outcome; and ’Age Group’.</p>
 <p>By the visdat,we can see there’s no missing data.</p>
 <p>We choose these variables since we want to study the relationship between the gender ,age and the outcome.</p>
 <p>We want to find whether client gender and age can affect the recovery rate.Is it true that the young has lower rate of infection and higher rate of recovery than the elder?</p>
-<p>We will discuss these problem by investigate the data from opendatatoronto dataset,and all the data about COVID-19 cases in Toronto is released by Toronto Public Health and last refreshed on Sept 23.</p>
-<pre><code>## # A tibble: 6 x 3
-##   `Client Gender` Outcome  `Age Group`   
-##   &lt;chr&gt;           &lt;chr&gt;    &lt;chr&gt;         
-## 1 FEMALE          RESOLVED 50 to 59 Years
-## 2 MALE            RESOLVED 50 to 59 Years
-## 3 FEMALE          RESOLVED 20 to 29 Years
-## 4 FEMALE          RESOLVED 60 to 69 Years
-## 5 MALE            RESOLVED 60 to 69 Years
-## 6 MALE            RESOLVED 50 to 59 Years</code></pre>
 </div>
 <div id="data-visulizations" class="section level1">
 <h1>Data visulizations</h1>
@@ -379,7 +107,7 @@ Table: (#tab:unnamed-chunk-2)Data summary</p>
 <pre><code>## 
 ##      FEMALE        MALE       OTHER TRANSGENDER     UNKNOWN 
 ##        9427        8184           6           5         250</code></pre>
-<p><img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>We can see clearly by the table and gg plot that, there are 9427 females and 8141 males who is infected with covid-19 despite the unknown data.
 As seen in the report“2016 Census: Age and Sex; Type of Dwelling” which is released by Statistics Canada, “In 2016, the ratio of males to females, was
 92.6 males for every 100 females.”
@@ -391,10 +119,10 @@ The infection rate of female and male is too slight to be noticed.</p>
 ##           1311           3049           2724           2416           2720 
 ## 60 to 69 Years 70 to 79 Years 80 to 89 Years   90 and older 
 ##           1813           1133           1557           1116</code></pre>
-<p><img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<p><img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 Since we cannot access the precise number for different groups,we cannot draw a solid conclusion here to analyze the infection rate of different ages.</p>
 <p><strong>Visulaize the relationship between age and the outcome</strong>
-<img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p><strong>Discussion</strong>:</p>
 <p>As the author of the dataset described,the interpretation of outcome is as follows:
 “Fatal: Cases with a fatal outcome reported.
@@ -404,7 +132,7 @@ Where the report date is more than 14 days from symptom onset AND the case is no
 This number is underreported due to a lag in data entry.
 Active: All other cases”</p>
 <p>As seen on the plot,we can see an obvious difference between different age groups.There’s a decline on the ration of resolved cases after people reach 60.And for people who is under 60, the death rate is so small that is negligible.But there’s a huge rise of the fatal cases as people reach 60.We can see that,<strong>the older of people, the higher posibilty of their illness cannot be recovered</strong>.</p>
-<p><img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p><strong>Discussion</strong></p>
 <p>In this graph, we can see despite the the data we cannot track,the resoloved ratio and fatal ratio in female and male is almost the same.We can conclude that in face of covid-19, women and men have the same ability to recover.There’s no difference between the gender.</p>
 </div>
@@ -436,8 +164,8 @@ Active: All other cases”</p>
 </div>
 <div id="some-other-notice" class="section level1">
 <h1>Some other notice</h1>
-<p>Code supporting this analysis is available at: <a href="https://github.com/DuoyiJoy/example_website" class="uri">https://github.com/DuoyiJoy/example_website</a>
-Data supporting this analysis is available at:<a href="https://open.toronto.ca/dataset/covid-19-cases-in-toronto/" class="uri">https://open.toronto.ca/dataset/covid-19-cases-in-toronto/</a></p>
+<p>Code supporting this analysis is available at: <a href="https://github.com/DuoyiJoy/example_website" class="uri">https://github.com/DuoyiJoy/example_website</a></p>
+<p>Data supporting this analysis is available at:<a href="https://open.toronto.ca/dataset/covid-19-cases-in-toronto/" class="uri">https://open.toronto.ca/dataset/covid-19-cases-in-toronto/</a></p>
 </div>
 
     </div>
