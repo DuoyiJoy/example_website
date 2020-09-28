@@ -82,7 +82,7 @@ mydata1 <-
 ```{r,echo=FALSE}
 visdat::vis_dat(mydata1)
 ```
-#I nterpretation for these data
+# Interpretation for these data
 
 The variables we focus on are 'Client Gender', 'Outcome' and 'Age Group'.
 
